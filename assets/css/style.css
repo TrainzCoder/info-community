@@ -1,0 +1,163 @@
+/*  === BASELINE CSS ===   */
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam&display=swap");
+
+:root {
+  --first-color: #2b2e4a;
+  --second-color: #903749;
+  --third-color: #e84545;
+  --fourth-color: #53354a;
+  --fifth-color: rgb(241, 241, 241);
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 16px;
+  overflow-y: scroll;
+  font-family: "Be Vietnam";
+  background-color: var(--fifth-color);
+}
+
+/* Hero */
+.hero {
+  height: 200px;
+  background-color: var(--first-color);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 2em;
+}
+
+/* Accordion Info */
+.info-section {
+  max-width: 500px;
+  margin: 3em auto;
+  border-radius: 5px;
+  overflow: hidden;
+  transition: all 0.4s;
+  box-shadow: 0 4px 4px -2px rgba(0, 0, 0, 0.5);
+}
+
+.btn-regist {
+  margin: 1.3em 0;
+  border: 2px solid var(--second-color);
+  border-radius: 2rem;
+  padding: 6px 24px;
+  color: var(--second-color);
+  box-shadow: 0 8px 14px -6px rgba(0, 0, 0, 0.25);
+  font-weight: 600;
+}
+
+.btn-regist:hover {
+  color: #fff;
+  background-color: var(--second-color);
+}
+
+.info {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.info input {
+  z-index: -1;
+  position: absolute;
+  opacity: 0;
+}
+
+.info label {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: var(--first-color);
+  color: #fff;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+
+.info label::after {
+  content: "\276F";
+  width: 1em;
+  height: 1em;
+  text-align: center;
+  transition: all 0.4s;
+}
+
+.info-content {
+  height: 0;
+  padding: 0 1em;
+  background: white;
+  transition: all 0.4s;
+  opacity: 0;
+}
+
+.info-text {
+  margin-bottom: 1em;
+  color: rgb(80, 79, 79);
+}
+
+span.important {
+  display: inline;
+  color:#dc3545;
+  font-weight:600;
+}
+
+span {
+  display: block;
+}
+
+.info-person a {
+  display: block;
+}
+
+.info input:checked ~ .info-content {
+  height: max-content;
+  padding: 1em 1em 2.1em 1em;
+  opacity: 1;
+}
+
+.info input:checked + label::after {
+  transform: rotate(90deg);
+}
+
+.info input:checked + label {
+  background-color: var(--fourth-color);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  margin-top: 3em;
+  padding: 1em;
+}
+
+@media (max-width: 516px) {
+  .hero {
+    padding: 2em 10px;
+  }
+
+  .hero h2 {
+    font-size: 1.6em;
+  }
+
+  .info-section {
+    max-width: 100%;
+    padding: 0 10px;
+    box-shadow: none;
+  }
+
+  .info-text {
+    font-size: 0.95em;
+  }
+}
